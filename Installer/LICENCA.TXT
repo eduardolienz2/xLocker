@@ -1,0 +1,115 @@
+TERMOS DE LICENCIAMENTO — xLocker
+====================================
+
+SOBRE A LICENÇA
+----------------
+
+Ao iniciar o aplicativo, o sistema identificará automaticamente o ID único da máquina.
+
+Esse identificador deverá ser fornecido para geração da licença.
+
+A licença:
+
+- É vinculada exclusivamente a uma única máquina
+- É individual
+- É intransferível
+- Não pode ser compartilhada
+
+Cada licença é válida para apenas um dispositivo.
+
+
+RESTRIÇÕES
+-----------
+
+É proibido:
+
+- Copiar, modificar ou redistribuir o software
+- Realizar engenharia reversa, descompilação ou desmontagem
+- Burlar mecanismos de ativação
+- Compartilhar licença com terceiros
+- Utilizar o sistema para fins ilícitos
+
+O uso indevido resultará na revogação imediata da licença, sem direito a reembolso.
+
+Todos os direitos são reservados.
+
+
+SUPORTE RELACIONADO À LICENÇA
+------------------------------
+
+Em caso de:
+
+- Erro na ativação
+- Falha na validação da licença
+- Problemas técnicos no funcionamento do sistema
+
+O usuário poderá solicitar suporte técnico pelos canais oficiais do desenvolvedor.
+
+E-mail: lienzofficial@gmail.com
+
+Para atendimento, poderá ser solicitado:
+
+- ID da máquina
+- Informações básicas da licença
+- Descrição detalhada do problema
+
+O suporte não inclui recuperação de dados ou chaves perdidas.
+
+---------------------- ENGLISH VERSION -------------------------
+
+LICENSE TERMS — xLocker
+========================
+
+ABOUT THE LICENSE
+------------------
+
+When launching the application, the system will automatically identify a unique Machine ID.
+
+This identifier must be provided for license generation.
+
+The license:
+
+- Is strictly bound to a single machine
+- Is individual
+- Is non-transferable
+- May not be shared
+
+Each license is valid for one device only.
+
+
+RESTRICTIONS
+-------------
+
+The following actions are strictly prohibited:
+
+- Copying, modifying, or redistributing the software
+- Reverse engineering, decompiling, or disassembling the software
+- Bypassing activation mechanisms
+- Sharing the license with third parties
+- Using the system for unlawful purposes
+
+Unauthorized use will result in immediate license revocation without refund.
+
+All rights reserved.
+
+
+LICENSE SUPPORT
+----------------
+
+In case of:
+
+- Activation errors
+- License validation failures
+- Technical issues affecting system functionality
+
+The user may request technical support through the developer's official channels.
+
+E-mail: lienzofficial@gmail.com
+
+For assistance, the following information may be required:
+
+- Machine ID
+- Basic license information
+- Detailed description of the issue
+
+Support does not include recovery of lost data or lost keys.

@@ -1,0 +1,21 @@
+# Local environment and licensing data
+.env
+clientes.json
+licencas_emitidas.json
+
+# Generated executables, installers, and build intermediates
+build/
+build_obf/
+dist/
+release/
+Installer/Output/
+*.spec
+!GerenciadorDeSenhas.spec
+__pycache__/
+*.py[cod]
+
+# Local signing keys and temporary build output
+*private*key*.pem
+license_signing_key.pem
+*.tmp
+*.rollback
