@@ -1,38 +1,30 @@
 @echo off
 setlocal
-set "ROOT=%~dp0"
-set "STAGING=%TEMP%\xLocker-build-%RANDOM%-%RANDOM%"
+pushd "%~dp0"
+if errorlevel 1 exit /b 1
 
-echo ================================
-echo   BUILD AUTOMATICO INICIADO
-echo ================================
-echo.
-
-echo Gerando codigo ofuscado...
-python -m pyarmor.cli gen -O "%STAGING%\obfuscated" "%ROOT%src\password_generator_gui.py"
+REM Step 1: build the app folder with PyInstaller (onedir = faster start, fewer antivirus false positives)
+python -m pip install -r "%~dp0requirements.txt"
 if errorlevel 1 goto :error
 
-echo.
-echo Gerando executavel protegido...
-python -m PyInstaller --onefile --noconsole --icon="%ROOT%assets\xLocker.ico" --name GerenciadorDeSenhas --hidden-import=tkinter --hidden-import=tkinter.ttk --hidden-import=tkinter.messagebox --hidden-import=uuid --hidden-import=hashlib --hidden-import=os --hidden-import=json --hidden-import=base64 --hidden-import=secrets --collect-all cryptography --distpath "%STAGING%\dist" --workpath "%STAGING%\work" --specpath "%STAGING%\spec" "%STAGING%\obfuscated\password_generator_gui.py"
+python -m PyInstaller --noconfirm --clean --windowed --name xLocker --collect-all customtkinter app.py
 if errorlevel 1 goto :error
 
-if not exist "%ROOT%dist" mkdir "%ROOT%dist"
-copy /Y "%STAGING%\dist\GerenciadorDeSenhas.exe" "%ROOT%dist\GerenciadorDeSenhas.exe"
+REM Step 2: build the installer (needs Inno Setup 6 installed)
+set "ISCC=%ProgramFiles(x86)%\Inno Setup 6\ISCC.exe"
+if not exist "%ISCC%" (
+    echo Inno Setup 6 compiler not found: "%ISCC%"
+    goto :error
+)
+
+"%ISCC%" "%~dp0installer\installer.iss"
 if errorlevel 1 goto :error
 
-rmdir /S /Q "%STAGING%"
-echo.
-echo ================================
-echo BUILD FINALIZADO COM SUCESSO!
-echo EXE disponivel em: dist\GerenciadorDeSenhas.exe
-echo ================================
-pause
+popd
 exit /b 0
 
 :error
-echo.
-echo ERRO NA COMPILACAO. Os arquivos existentes em dist nao foram removidos.
-echo Arquivos de diagnostico, se gerados, estao em: %STAGING%
-pause
-exit /b 1
+set "BUILD_ERROR=%errorlevel%"
+if "%BUILD_ERROR%"=="0" set "BUILD_ERROR=1"
+popd
+exit /b %BUILD_ERROR%
