@@ -1,5 +1,7 @@
 """xLocker UI (customtkinter). Talks only to storage + generator."""
+import sys
 import time
+from pathlib import Path
 import tkinter as tk
 from tkinter import messagebox
 import customtkinter as ctk
@@ -20,6 +22,8 @@ class App(ctk.CTk):
         ctk.set_appearance_mode("system")
         ctk.set_default_color_theme("blue")
         self.title("xLocker")
+        icon_dir = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
+        self.iconbitmap(str(icon_dir / "icon.ico"))
         self.geometry("460x720")
         self.minsize(420, 660)
         self.store = VaultStore()

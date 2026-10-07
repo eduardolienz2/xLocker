@@ -15,6 +15,6 @@ The master password cannot be recovered if it is forgotten. Back up the encrypte
 
 ## Build on Windows
 
-Run `build.bat` to install the listed dependencies, create the application in `dist\xLocker`, and build the installer. Inno Setup 6 must be installed for the installer step.
+Run `build.bat` to install the listed dependencies, create the application in `dist\xLocker`, and build the installer. The `icon.ico` asset is used for the app window, executable, and installer. Inno Setup 6 must be installed for the installer step.
 
 Generated build output and installer executables are excluded from Git.

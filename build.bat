@@ -7,7 +7,7 @@ REM Step 1: build the app folder with PyInstaller (onedir = faster start, fewer 
 python -m pip install -r "%~dp0requirements.txt"
 if errorlevel 1 goto :error
 
-python -m PyInstaller --noconfirm --clean --windowed --name xLocker --collect-all customtkinter app.py
+python -m PyInstaller --noconfirm --clean xLocker.spec
 if errorlevel 1 goto :error
 
 REM Step 2: build the installer (needs Inno Setup 6 installed)
