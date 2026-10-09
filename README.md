@@ -36,8 +36,8 @@ O xLocker é um aplicativo para Windows que reúne um cofre local de senhas e um
 
 - **Sistema:** Windows.
 - **Execução:** o pacote distribuído inclui o runtime necessário; não é preciso instalar Python para usar o aplicativo.
-- **Armazenamento:** `%APPDATA%\SecureVault\vault.dat`; os registros são criptografados localmente com AES-256-GCM.
-- **Proteção da chave:** derivação a partir da senha mestra com scrypt (`N=131072`, `r=8`, `p=1`).
+- **Armazenamento:** `%APPDATA%\SecureVault\vault.dat`; os registros são criptografados localmente.
+- **Proteção da chave:** derivação a partir da senha mestra
 - **Gerador:** usa o gerador criptográfico seguro do sistema operacional; a interface oferece comprimentos de 8 a 64 caracteres.
 - **Executável:** pacote PyInstaller no modo `onedir`; extraia o ZIP completo antes de executar.
 - **Build no Windows:** execute `build.bat`. O script gera o aplicativo em `dist\xLocker` e o instalador; a etapa do instalador requer o Inno Setup 6.
